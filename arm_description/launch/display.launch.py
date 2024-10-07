@@ -1,7 +1,7 @@
 from launch import LaunchDescription #launch file return a LaunchDescription object in which all Nodes included
 from launch.substitutions import Command, LaunchConfiguration
 from launch.actions import DeclareLaunchArgument
-
+#from launch.actions import ExecuteProcess
 from launch_ros.actions import Node #For creating nodes 
 from launch_ros.parameter_descriptions import ParameterValue
 
@@ -39,11 +39,11 @@ def generate_launch_description():
         arguments=["-d", os.path.join(get_package_share_directory("arm_description"),"rviz","display.rviz")]
         
     )
-    
+    #cmd="/home/sib/manipulator_ws/src/arm_description/cmd.txt"
     return LaunchDescription([
+        #ExecuteProcess(cmd=["gedit",cmd],output="screen"),
         model_arg,
         robot_state_publisher,
         joint_state_publisher,
         rviz_node
-        
     ])
