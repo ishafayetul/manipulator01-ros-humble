@@ -32,7 +32,7 @@ def generate_launch_description():
             "joint_state_broadcaster",
             "--controller-manager",
             "/controller_manager",
-        ]
+        ],
     )
     arm_controller_spawner=Node(
         package="controller_manager",
@@ -40,8 +40,8 @@ def generate_launch_description():
         arguments=[
             "arm_controller",
             "--controller-manager",
-            "/controller_manager",
-        ]
+            "/controller_manager"
+        ],
     )
     gripper_controller_spawner=Node(
         package="controller_manager",
@@ -49,8 +49,8 @@ def generate_launch_description():
         arguments=[
             "gripper_controller",
             "--controller-manager",
-            "/controller_manager",
-        ]
+            "/controller_manager"
+        ],
     )
     return LaunchDescription([
         robot_state_publisher,

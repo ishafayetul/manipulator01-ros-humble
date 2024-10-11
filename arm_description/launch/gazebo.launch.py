@@ -47,7 +47,7 @@ def generate_launch_description():
         package="gazebo_ros",
         executable="spawn_entity.py",
         arguments=[
-            "-entity","armbot",
+            "-entity","arm",
             "-topic","robot_description",
             ],
         output="screen"
